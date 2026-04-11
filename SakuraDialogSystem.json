@@ -5,14 +5,27 @@
   "extensionNamespace": "",
   "fullName": "Sakura Dialog System",
   "gdevelopVersion": "",
-  "helpPath": "",
+  "helpPath": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/",
   "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWNvbW1lbnQtdGV4dCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik05LDIyQTEsMSAwIDAsMSA4LDIxVjE4SDRBMiwyIDAgMCwxIDIsMTZWNEMyLDIuODkgMi45LDIgNCwySDIwQTIsMiAwIDAsMSAyMiw0VjE2QTIsMiAwIDAsMSAyMCwxOEgxMy45TDEwLjIsMjEuNzFDMTAsMjEuOSA5Ljc1LDIyIDkuNSwyMlYyMkg5TTUsNVY3SDE5VjVINU01LDlWMTFIMTNWOUg1TTUsMTNWMTVIMTVWMTNINVoiIC8+PC9zdmc+",
   "name": "SakuraDialogSystem",
   "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/17eca6f19dabe086a3da00dd623928f85e3f4b6749a98430b5da2bfe9506d1bb_comment-text.svg",
-  "shortDescription": "Un sistema de dialogo más moderno que busca reemplazar a Yarn",
-  "version": "1.0.0",
-  "description": "Sakura Dialog System es un sistema de dialogo hecho completamente de cero, que busca reemplazar a Yarn (debido a limitaciones)",
-  "tags": [],
+  "shortDescription": "A dialogue system built from scratch that aims to be more modern.",
+  "version": "0.1.0",
+  "description": [
+    "A dialog system built from scratch that aims to be more modern and make creating dialogs in GDevelop even easier.",
+    "",
+    "This extension makes it easier to create a dialogue system for a game made in GDevelop.",
+    "",
+    "*You can load JSON files created with Sakura Script into Visual Studio Code.*",
+    "",
+    "For more information, [click here](https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD)"
+  ],
+  "tags": [
+    "dialogue tree",
+    "dialogue system",
+    "visual novel",
+    "narrative"
+  ],
   "authorIds": [
     "bLei6mp8FMXlGD75f0bd33VOBoL2"
   ],
@@ -167,11 +180,11 @@
   "sceneVariables": [],
   "eventsFunctions": [
     {
-      "description": "Cargar el archivo de dialogo en formato JSON creado con Sakura Dialog Editor.\n\nPor defecto, siempre se carga la rama \"Start\" si no se especifica otra rama",
-      "fullName": "Cargar archivo de dialogo",
+      "description": "Load the dialog file in JSON format created with Sakura Script from Visual Studio Code.\n\nBy default, the \"Start\" branch is always loaded unless another branch is specified.",
+      "fullName": "Load dialog file ",
       "functionType": "Action",
       "name": "LoadJSON",
-      "sentence": "Cargar el archivo de dialogo _PARAM1_",
+      "sentence": "Load the _PARAM1_ dialog file",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Comment",
@@ -296,8 +309,8 @@
       "objectGroups": []
     },
     {
-      "description": "Obtener linea de dialogo, si al avanzar hasta el final no hay más nada que hacer (sea un comando para ir a otra rama), el dialogo se terminara.",
-      "fullName": "Obtener linea de dialogo actual",
+      "description": "Get dialogue line, if after advancing to the end there is nothing more to do (be it a command to go to another branch), the dialogue will end.",
+      "fullName": "Get dialogue line",
       "functionType": "StringExpression",
       "name": "GetCurrentLine",
       "sentence": "",
@@ -621,6 +634,7 @@
                   ]
                 },
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -701,7 +715,7 @@
                               "parameters": [
                                 "_dialogSettings._lastLineType",
                                 "=",
-                                "\"null\""
+                                "\"pass\""
                               ]
                             }
                           ]
@@ -984,11 +998,11 @@
       "objectGroups": []
     },
     {
-      "description": "Ir a la siguiente linea de dialogo",
-      "fullName": "Ir a la siguiente linea de dialogo",
+      "description": "Go to the next line of dialogue.",
+      "fullName": "Go to the next line",
       "functionType": "Action",
       "name": "NextDialog",
-      "sentence": "Ir a la siguiente linea de dialogo",
+      "sentence": "Go to the next line of dialogue",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Comment",
@@ -1062,11 +1076,11 @@
       "objectGroups": []
     },
     {
-      "description": "Obtener el tipo de linea\n\nPuede ser \"dialogue\", \"command\", \"option\" o \"conditional\".",
-      "fullName": "Obtener el tipo de linea",
+      "description": "Get the line type\n\nIt can be \"dialogue\", \"command\", \"option\", or \"conditional\".",
+      "fullName": "Get line type",
       "functionType": "Condition",
       "name": "GetLineType",
-      "sentence": "Tipo de linea _PARAM1_",
+      "sentence": "Line type _PARAM1_",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1122,11 +1136,11 @@
       "objectGroups": []
     },
     {
-      "description": "Un comando es una linea especial que debe ser usada para accionar algo en los eventos del juego.\n\nComo cambiar un fondo, mover un personaje, etc.",
-      "fullName": "Se llama un comando",
+      "description": "A command is a special line of code used to trigger an action within the game.\n\nFor example, changing a background, moving a character, etc.",
+      "fullName": "Command called",
       "functionType": "Condition",
       "name": "CallCommand",
-      "sentence": "Se llama el comando _PARAM1_",
+      "sentence": "The command is called _PARAM1_",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1145,97 +1159,88 @@
           "actions": [],
           "events": [
             {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Para evitar problemas, no es posible llamar a los comandos predeterminados como propios"
+            },
+            {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "StringVariable"
+                    "value": "BuiltinCommonInstructions::And"
                   },
-                  "parameters": [
-                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
-                    "=",
-                    "\"command\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "_currentCommand.useConditional",
-                    "True",
-                    ""
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Comment",
-                  "color": {
-                    "b": 109,
-                    "g": 230,
-                    "r": 255,
-                    "textB": 0,
-                    "textG": 0,
-                    "textR": 0
-                  },
-                  "comment": "Comprobar que la linea del comando, concuerde con el parametro\n\nPuede ser \"setVariable\""
-                },
-                {
-                  "folded": true,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
+                  "parameters": [],
+                  "subInstructions": [
                     {
                       "type": {
                         "value": "BuiltinCommonInstructions::CompareStrings"
                       },
                       "parameters": [
                         "CommandName",
+                        "!=",
+                        "\"jump\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareStrings"
+                      },
+                      "parameters": [
+                        "CommandName",
+                        "!=",
+                        "\"end\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareStrings"
+                      },
+                      "parameters": [
+                        "CommandName",
+                        "!=",
+                        "\"set_variable\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
                         "=",
-                        "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]"
+                        "\"command\""
                       ]
                     }
                   ],
                   "actions": [
                     {
                       "type": {
-                        "value": "SetStringVariable"
+                        "value": "SetBooleanVariable"
                       },
                       "parameters": [
-                        "_dialogSettings._lastLineType",
-                        "=",
-                        "\"command\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetReturnBoolean"
-                      },
-                      "parameters": [
-                        "True"
+                        "_currentCommand.useConditional",
+                        "True",
+                        ""
                       ]
                     }
                   ],
                   "events": [
-                    {
-                      "disabled": true,
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "DebuggerTools::ConsoleLog"
-                          },
-                          "parameters": [
-                            "\"current Command = \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"] ",
-                            "\"info\"",
-                            ""
-                          ]
-                        }
-                      ]
-                    },
                     {
                       "type": "BuiltinCommonInstructions::Comment",
                       "color": {
@@ -1246,7 +1251,7 @@
                         "textG": 0,
                         "textR": 0
                       },
-                      "comment": "Si hay parametros, entonces almacenarlos primero en _currentCommand.parameters"
+                      "comment": "Comprobar que la linea del comando, concuerde con el parametro\n\nPuede ser \"setVariable\""
                     },
                     {
                       "folded": true,
@@ -1254,16 +1259,35 @@
                       "conditions": [
                         {
                           "type": {
-                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                            "value": "BuiltinCommonInstructions::CompareStrings"
                           },
                           "parameters": [
-                            "VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"])",
-                            ">",
-                            "0"
+                            "CommandName",
+                            "=",
+                            "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]"
                           ]
                         }
                       ],
-                      "actions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetStringVariable"
+                          },
+                          "parameters": [
+                            "_dialogSettings._lastLineType",
+                            "=",
+                            "\"command\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetReturnBoolean"
+                          },
+                          "parameters": [
+                            "True"
+                          ]
+                        }
+                      ],
                       "events": [
                         {
                           "disabled": true,
@@ -1275,7 +1299,7 @@
                                 "value": "DebuggerTools::ConsoleLog"
                               },
                               "parameters": [
-                                "\"cantidad de parametros de \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"] + \" = \" +   ToString(VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"]))",
+                                "\"current Command = \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"] ",
                                 "\"info\"",
                                 ""
                               ]
@@ -1283,21 +1307,33 @@
                           ]
                         },
                         {
-                          "type": "BuiltinCommonInstructions::Repeat",
-                          "repeatExpression": "VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"])",
-                          "conditions": [],
-                          "actions": [
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Si hay parametros, entonces almacenarlos primero en _currentCommand.parameters"
+                        },
+                        {
+                          "folded": true,
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
                             {
                               "type": {
-                                "value": "SetStringVariable"
+                                "value": "BuiltinCommonInstructions::CompareNumbers"
                               },
                               "parameters": [
-                                "_currentCommand.parameters[param_index]",
-                                "=",
-                                "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][param_index]"
+                                "VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"])",
+                                ">",
+                                "0"
                               ]
                             }
                           ],
+                          "actions": [],
                           "events": [
                             {
                               "disabled": true,
@@ -1309,7 +1345,7 @@
                                     "value": "DebuggerTools::ConsoleLog"
                                   },
                                   "parameters": [
-                                    "\"current Param = \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][param_index]",
+                                    "\"cantidad de parametros de \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"] + \" = \" +   ToString(VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"]))",
                                     "\"info\"",
                                     ""
                                   ]
@@ -1317,26 +1353,127 @@
                               ]
                             },
                             {
-                              "disabled": true,
-                              "type": "BuiltinCommonInstructions::Standard",
+                              "type": "BuiltinCommonInstructions::Repeat",
+                              "repeatExpression": "VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"])",
                               "conditions": [],
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "DebuggerTools::ConsoleLog"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "\"current Param index = \" + param_index",
-                                    "\"info\"",
-                                    ""
+                                    "_currentCommand.parameters[param_index]",
+                                    "=",
+                                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][param_index]"
                                   ]
                                 }
+                              ],
+                              "events": [
+                                {
+                                  "disabled": true,
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "DebuggerTools::ConsoleLog"
+                                      },
+                                      "parameters": [
+                                        "\"current Param = \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][param_index]",
+                                        "\"info\"",
+                                        ""
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "disabled": true,
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "DebuggerTools::ConsoleLog"
+                                      },
+                                      "parameters": [
+                                        "\"current Param index = \" + param_index",
+                                        "\"info\"",
+                                        ""
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "SetNumberVariable"
+                                      },
+                                      "parameters": [
+                                        "param_index",
+                                        "+",
+                                        "1"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "variables": [
+                                {
+                                  "name": "param_index",
+                                  "type": "number",
+                                  "value": 0
+                                }
                               ]
-                            },
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Al almacenarlos en _currentCommand.parameters, guardar los comandos en la en la variable _currentCommand.lastParameters, esto para evitar que si el indice actual es 2, pero avanza ahora mismo al 3, la expresión GetCommandParameter pueda obtener los parametros del indice 2"
+                        },
+                        {
+                          "folded": true,
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
                             {
-                              "type": "BuiltinCommonInstructions::Standard",
+                              "type": {
+                                "value": "BuiltinCommonInstructions::CompareNumbers"
+                              },
+                              "parameters": [
+                                "VariableChildCount(_currentCommand.parameters)",
+                                ">",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Repeat",
+                              "repeatExpression": "VariableChildCount(_currentCommand.parameters)",
                               "conditions": [],
                               "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetStringVariable"
+                                  },
+                                  "parameters": [
+                                    "_currentCommand.lastParameters[param_index]",
+                                    "=",
+                                    "_currentCommand.parameters[param_index]"
+                                  ]
+                                },
                                 {
                                   "type": {
                                     "value": "SetNumberVariable"
@@ -1347,14 +1484,48 @@
                                     "1"
                                   ]
                                 }
+                              ],
+                              "variables": [
+                                {
+                                  "name": "param_index",
+                                  "type": "number",
+                                  "value": 0
+                                }
                               ]
                             }
-                          ],
-                          "variables": [
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
                             {
-                              "name": "param_index",
-                              "type": "number",
-                              "value": 0
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
+                                "+",
+                                "1"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ClearVariableChildren"
+                              },
+                              "parameters": [
+                                "_currentCommand.parameters"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "_currentCommand.useConditional",
+                                "False",
+                                ""
+                              ]
                             }
                           ]
                         }
@@ -1370,64 +1541,32 @@
                         "textG": 0,
                         "textR": 0
                       },
-                      "comment": "Al almacenarlos en _currentCommand.parameters, guardar los comandos en la en la variable _currentCommand.lastParameters, esto para evitar que si el indice actual es 2, pero avanza ahora mismo al 3, la expresión GetCommandParameter pueda obtener los parametros del indice 2"
+                      "comment": "Si el comando se se llama, no concuerda con el de actual (ejemplo, ese comando esta dentro de un bucle) y para evitar que el juego lo llame antes, entonces saltar"
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
                           "type": {
-                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                            "value": "BooleanVariable"
                           },
                           "parameters": [
-                            "VariableChildCount(_currentCommand.parameters)",
-                            ">",
-                            "0"
+                            "_currentCommand.useConditional",
+                            "True",
+                            "LineType"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareStrings"
+                          },
+                          "parameters": [
+                            "CommandName",
+                            "=",
+                            "_currentCommand.lastName"
                           ]
                         }
                       ],
-                      "actions": [],
-                      "events": [
-                        {
-                          "type": "BuiltinCommonInstructions::Repeat",
-                          "repeatExpression": "VariableChildCount(_currentCommand.parameters)",
-                          "conditions": [],
-                          "actions": [
-                            {
-                              "type": {
-                                "value": "SetStringVariable"
-                              },
-                              "parameters": [
-                                "_currentCommand.lastParameters[param_index]",
-                                "=",
-                                "_currentCommand.parameters[param_index]"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "SetNumberVariable"
-                              },
-                              "parameters": [
-                                "param_index",
-                                "+",
-                                "1"
-                              ]
-                            }
-                          ],
-                          "variables": [
-                            {
-                              "name": "param_index",
-                              "type": "number",
-                              "value": 0
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [],
                       "actions": [
                         {
                           "type": {
@@ -1437,14 +1576,6 @@
                             "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
                             "+",
                             "1"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ClearVariableChildren"
-                          },
-                          "parameters": [
-                            "_currentCommand.parameters"
                           ]
                         },
                         {
@@ -1460,65 +1591,6 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Comment",
-                  "color": {
-                    "b": 109,
-                    "g": 230,
-                    "r": 255,
-                    "textB": 0,
-                    "textG": 0,
-                    "textR": 0
-                  },
-                  "comment": "Si el comando se se llama, no concuerda con el de actual (ejemplo, ese comando esta dentro de un bucle) y para evitar que el juego lo llame antes, entonces saltar"
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "_currentCommand.useConditional",
-                        "True",
-                        "LineType"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::CompareStrings"
-                      },
-                      "parameters": [
-                        "CommandName",
-                        "=",
-                        "_currentCommand.lastName"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                        "+",
-                        "1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "_currentCommand.useConditional",
-                        "False",
-                        ""
-                      ]
-                    }
-                  ]
                 }
               ]
             }
@@ -1527,7 +1599,7 @@
       ],
       "parameters": [
         {
-          "description": "Comando",
+          "description": "Command name",
           "name": "CommandName",
           "type": "string"
         }
@@ -1535,7 +1607,7 @@
       "objectGroups": []
     },
     {
-      "description": "Copiar todos los elementos de un array en otro array",
+      "description": "Copiar todos los elementos de un array en otro array.",
       "fullName": "Copiar un array en otro array",
       "functionType": "Action",
       "name": "CopyArrayInArray",
@@ -1575,11 +1647,11 @@
       "objectGroups": []
     },
     {
-      "description": "Cambia la rama actual por otra",
-      "fullName": "Cambiar rama",
+      "description": "Go to another dialogue branch in your file.",
+      "fullName": "Go to branch",
       "functionType": "Action",
       "name": "SetBranch",
-      "sentence": "Ir a la rama _PARAM1_",
+      "sentence": "Go to branch _PARAM1_",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Comment",
@@ -1616,6 +1688,14 @@
                 "_dialogSettings._currentBranch",
                 "=",
                 "Branch"
+              ]
+            },
+            {
+              "type": {
+                "value": "ClearVariableChildren"
+              },
+              "parameters": [
+                "_dialogSettings._lastLoop"
               ]
             },
             {
@@ -1722,8 +1802,8 @@
       "objectGroups": []
     },
     {
-      "description": "Obtener valor de un parametro de comando",
-      "fullName": "Obtener valor de un parametro de comando",
+      "description": "Get the value of a command parameter.",
+      "fullName": "Get command parameter",
       "functionType": "StringExpression",
       "name": "GetCommandParameter",
       "sentence": "",
@@ -1901,7 +1981,7 @@
       },
       "parameters": [
         {
-          "description": "Indice del parametro",
+          "description": "Parameter index",
           "name": "ParamIndex",
           "type": "expression"
         }
@@ -1909,11 +1989,11 @@
       "objectGroups": []
     },
     {
-      "description": "Detener la ejecución del dialogo.",
-      "fullName": "Detener la ejecución del dialogo",
+      "description": "Stop the execution of the dialogue.",
+      "fullName": "Stop dialogue",
       "functionType": "Action",
       "name": "StopDialog",
-      "sentence": "Detener la ejecución del dialogo",
+      "sentence": "Stop the execution of the dialogue",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1936,11 +2016,11 @@
       "objectGroups": []
     },
     {
-      "description": "Se está ejecutando el dialogo.",
-      "fullName": "Se está ejecutando el dialogo",
+      "description": "The dialogue is running.",
+      "fullName": "Dialogue running",
       "functionType": "Condition",
       "name": "IsDialogRunning",
-      "sentence": "Se está ejecutando el dialogo",
+      "sentence": "Dialogue is running",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1972,8 +2052,8 @@
       "objectGroups": []
     },
     {
-      "description": "Obtener el que habla actualmente.",
-      "fullName": "Quien habla",
+      "description": "Obtain the one who is currently a speaker.",
+      "fullName": "Get who",
       "functionType": "StringExpression",
       "name": "GetWho",
       "sentence": "",
@@ -2104,30 +2184,12 @@
                   "whileConditions": [
                     {
                       "type": {
-                        "value": "BuiltinCommonInstructions::Or"
+                        "value": "StringVariable"
                       },
-                      "parameters": [],
-                      "subInstructions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
-                            "=",
-                            "\"comment\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
-                            "=",
-                            "\"pass\""
-                          ]
-                        }
+                      "parameters": [
+                        "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
+                        "=",
+                        "\"pass\""
                       ]
                     }
                   ],
@@ -2140,7 +2202,7 @@
                       "parameters": [
                         "_dialogSettings._lastLineType",
                         "=",
-                        "\"null\""
+                        "\"pass\""
                       ]
                     }
                   ],
@@ -2289,6 +2351,7 @@
                   "comment": "Linea condicional, si las condiciones\n\nEste bloque tiene como objetivo, dar un dinamismo a la hora de que se cumplan ciertas cosas en tu juego\n\nComo reproducir un camino diferente si la condicion es verdadera (if), si se cumple de otra forma (else if) y si no se cumplio ninguna de las formas (else)\n\nHay que decir, que else if puede usarse varias veces, por ende, hay que saber como calcuclar cuantas lineas \"else if\" habra"
                 },
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2729,8 +2792,8 @@
       "objectGroups": []
     },
     {
-      "description": "Retornar la cantidad de opciones",
-      "fullName": "Obtener la cantidad de opciones",
+      "description": "Return the number of options.",
+      "fullName": "Get options number",
       "functionType": "Expression",
       "name": "GetOptionsCount",
       "sentence": "",
@@ -2798,8 +2861,8 @@
       "objectGroups": []
     },
     {
-      "description": "Retornar el nombre de una opción mediante su indice",
-      "fullName": "Obtener el nombre de una opción",
+      "description": "Return the name of an option using its index.",
+      "fullName": "Get option name",
       "functionType": "StringExpression",
       "name": "GetOptionName",
       "sentence": "",
@@ -2912,7 +2975,7 @@
       },
       "parameters": [
         {
-          "description": "Indice de la opción",
+          "description": "Option index name",
           "name": "OptionIndex",
           "type": "expression"
         }
@@ -2920,11 +2983,11 @@
       "objectGroups": []
     },
     {
-      "description": "Confirmar selección de opción mediante el indice de la misma",
-      "fullName": "Confirmar selección de opción",
+      "description": "Confirm option selection using the index of the same.",
+      "fullName": "Confirm option selection ",
       "functionType": "Action",
       "name": "ConfirmSelection",
-      "sentence": "Confirmar selección de opción _PARAM1_",
+      "sentence": "Confirm selection of option _PARAM1_",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -3110,7 +3173,7 @@
       "objectGroups": []
     },
     {
-      "description": "Evaluar la condición del tipo de linea \"conditional\"\n\nDevolvera un booleano si la condicion if o else if, es verdadera, si no se cumple ninguna, se regresa false y por ende, se ejecuta el bloque else.",
+      "description": "Evaluar la condición del tipo de linea \"conditional\".\n\nDevolvera un booleano si la condicion if o else if, es verdadera, si no se cumple ninguna, se regresa false y por ende, se ejecuta el bloque else.",
       "fullName": "Se cumple la condición en la linea \"conditional\"",
       "functionType": "Condition",
       "name": "ConditionalParser",
@@ -3230,7 +3293,7 @@
       "objectGroups": []
     },
     {
-      "description": "Regresar a la linea de dialogo anterior",
+      "description": "Regresar a la linea de dialogo anterior\n\n(Por ahora está en construcción).",
       "fullName": "Regresar a la linea anterior",
       "functionType": "Action",
       "name": "ReturnDialog",
@@ -3385,7 +3448,6 @@
                   "actions": [],
                   "events": [
                     {
-                      "folded": true,
                       "infiniteLoopWarning": true,
                       "type": "BuiltinCommonInstructions::While",
                       "whileConditions": [
@@ -3429,7 +3491,6 @@
                           "colorG": 176,
                           "colorR": 74,
                           "creationTime": 0,
-                          "folded": true,
                           "name": "Comandos predeterminados (No necesitan a \"CallCommand\")",
                           "source": "",
                           "type": "BuiltinCommonInstructions::Group",
@@ -3463,11 +3524,65 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "SetBooleanVariable"
+                                    "value": "SakuraDialogSystem::StopDialog"
                                   },
                                   "parameters": [
-                                    "_dialogIsRunning",
-                                    "False",
+                                    "",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "StringVariable"
+                                  },
+                                  "parameters": [
+                                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]",
+                                    "=",
+                                    "\"jump\""
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SakuraDialogSystem::SetBranch"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "SakuraDialogSystem::GetCommandParameter(0)",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "StringVariable"
+                                  },
+                                  "parameters": [
+                                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]",
+                                    "=",
+                                    "\"set_variable\""
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SakuraDialogSystem::SetVariable"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "SakuraDialogSystem::GetCommandParameter(0)",
+                                    "SakuraDialogSystem::GetCommandParameter(1)",
                                     ""
                                   ]
                                 }
@@ -3670,11 +3785,11 @@
       "objectGroups": []
     },
     {
-      "description": "Guardar posición del dialogo en una variable.",
-      "fullName": "Guardar estado",
+      "description": "Save the dialog position in a variable.",
+      "fullName": "Save State",
       "functionType": "Action",
       "name": "SaveState",
-      "sentence": "Guardar estado en la variable _PARAM1_",
+      "sentence": "Save state in the variable _PARAM1_",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Comment",
@@ -3725,11 +3840,11 @@
       "objectGroups": []
     },
     {
-      "description": "Cargar posición de dialogo desde una variable.",
-      "fullName": "Cargar estado",
+      "description": "Load dialog position from a variable.\n\nNote: This action currently does not take into account changes to the dialog file (e.g., you changed or deleted a line of dialogue).",
+      "fullName": "Load State",
       "functionType": "Action",
       "name": "LoadState",
-      "sentence": "Cargar estado desde la variable _PARAM1_",
+      "sentence": "Load state from the variable _PARAM1_",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Comment",
@@ -3775,6 +3890,83 @@
           "description": "Variable de estructura ",
           "name": "VarToLoad",
           "type": "variable"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Cambiar valor de variable.",
+      "fullName": "Cambiar valor de variable",
+      "functionType": "Action",
+      "name": "SetVariable",
+      "private": true,
+      "sentence": "Cambiar valor de variable _PARAM1_ por _PARAM2_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Cambiar valor de variable"
+        },
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "// Obtener nombre de variable y nuevo valor",
+            "const varName = eventsFunctionContext.getArgument(\"VarName\");",
+            "const newValue = eventsFunctionContext.getArgument(\"NewValue\");",
+            "",
+            "// Referenciar escena actual y juego global",
+            "const scene = runtimeScene.getScene().getVariables();",
+            "const game = runtimeScene.getGame().getVariables();",
+            "",
+            "// Obtener variable de escena",
+            "let sceneVar = scene.get(varName);",
+            "",
+            "// Si la variable no existe como variable de escena",
+            "// Ir por la variable global",
+            "if(!scene.hasVariable(sceneVar)){",
+            "    console.warn(\"The variable\" + varName + \"does not exist\");",
+            "",
+            "    sceneVar = game.get(varName);",
+            "",
+            "    if(!game.hasVariable(sceneVar)){",
+            "        console.warn(\"The variable\" + varName + \"does not exist\");",
+            "    }",
+            "}",
+            "",
+            "// Comprobar que el valor sea un numero, si no, es una cadena",
+            "let regNum = /^-?\\d+(\\.\\d+)?$/;",
+            "",
+            "// Si es un número, entonces cambiar el valor como número",
+            "if(regNum.test(newValue)){",
+            "    sceneVar.setNumber(parseFloat(newValue));",
+            "}",
+            "// Si no, es una cadena",
+            "else{",
+            "    sceneVar.setString(newValue);",
+            "}"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Nombre de la variable",
+          "name": "VarName",
+          "type": "string"
+        },
+        {
+          "description": "Nuevo valor",
+          "name": "NewValue",
+          "type": "string"
         }
       ],
       "objectGroups": []
@@ -3842,6 +4034,9 @@
       },
       {
         "functionName": "LoadState"
+      },
+      {
+        "functionName": "SetVariable"
       }
     ]
   },
