@@ -4,6 +4,7 @@
 
 <!-- Badges del README --->
 
+[gdevelop-badge]: https://img.shields.io/badge/Engine-GDevelop-purple?style=flat
 [license-badge]: https://img.shields.io/badge/License-MIT-orange?style=flat
 [status-badge]: https://img.shields.io/badge/Status-In%20development-green?style=flat
 [version-badge]: https://img.shields.io/badge/Version-0.1.0-orange?style=flat
@@ -30,17 +31,17 @@ This dialog system arose from observing the limitations of GDevelop's internal d
 
 Extending the functionality of GDevelop's DialogueTree//Yarn proved very difficult, and after much struggle, the same errors kept appearing. I decided to create my own system from scratch, tailored to my needs as a former Ren'Py user.
 
-This extension also led to its own language, SakuraScript.
+This extension also led to its own language, Sakura Script.
 
 Inspired by Ren'Py's own language.
 
-For more information [click here]()
-
 *The name "Sakura" simply appealed to me, and the character featured in the logo is a succubus named "Kammi Sakura."*
+
+For more information about Sakura Script [click here](https://github.com/QuetzalcoutlDev/sakura-script)
 
 ## Getting Started💡
 
-This extension is very simple to use, but I still wrote a guide that might be helpful; you can find it [by clicking here](https://github.com/QuetzalcoutlDev/sakura-script/blob/master/docs/README.md).
+This extension is very simple to use, but I still wrote a guide that might be helpful; you can find it [by clicking here](https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md).
 
 ## License 📙
 
@@ -50,6 +51,5 @@ This extension is under the MIT License.
 
 ## Follow me
 
-Follow me on [X](https://x.com/DazzleDevTeam)
-
-Buy me a coffee on [ko-fi](https://ko-fi.com/quetzalcoutl)
+* Follow me on [X](https://x.com/DazzleDevTeam)
+* Buy me a coffee on [ko-fi](https://ko-fi.com/quetzalcoutl)

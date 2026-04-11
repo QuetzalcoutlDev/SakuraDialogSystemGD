@@ -1175,84 +1175,84 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "BuiltinCommonInstructions::And"
+                    "value": "StringVariable"
                   },
-                  "parameters": [],
-                  "subInstructions": [
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::CompareStrings"
-                      },
-                      "parameters": [
-                        "CommandName",
-                        "!=",
-                        "\"jump\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::CompareStrings"
-                      },
-                      "parameters": [
-                        "CommandName",
-                        "!=",
-                        "\"end\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::CompareStrings"
-                      },
-                      "parameters": [
-                        "CommandName",
-                        "!=",
-                        "\"set_variable\""
-                      ]
-                    }
+                  "parameters": [
+                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
+                    "=",
+                    "\"command\""
                   ]
                 }
               ],
-              "actions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "_currentCommand.useConditional",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Comprobar que la linea del comando, concuerde con el parametro\n\nPuede ser \"setVariable\""
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
                       "type": {
-                        "value": "StringVariable"
+                        "value": "BuiltinCommonInstructions::And"
                       },
-                      "parameters": [
-                        "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
-                        "=",
-                        "\"command\""
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareStrings"
+                          },
+                          "parameters": [
+                            "CommandName",
+                            "!=",
+                            "\"jump\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareStrings"
+                          },
+                          "parameters": [
+                            "CommandName",
+                            "!=",
+                            "\"end\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareStrings"
+                          },
+                          "parameters": [
+                            "CommandName",
+                            "!=",
+                            "\"set_variable\""
+                          ]
+                        }
                       ]
                     }
                   ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "_currentCommand.useConditional",
-                        "True",
-                        ""
-                      ]
-                    }
-                  ],
+                  "actions": [],
                   "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Comment",
-                      "color": {
-                        "b": 109,
-                        "g": 230,
-                        "r": 255,
-                        "textB": 0,
-                        "textG": 0,
-                        "textR": 0
-                      },
-                      "comment": "Comprobar que la linea del comando, concuerde con el parametro\n\nPuede ser \"setVariable\""
-                    },
                     {
                       "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
@@ -3448,6 +3448,7 @@
                   "actions": [],
                   "events": [
                     {
+                      "folded": true,
                       "infiniteLoopWarning": true,
                       "type": "BuiltinCommonInstructions::While",
                       "whileConditions": [
@@ -3491,6 +3492,7 @@
                           "colorG": 176,
                           "colorR": 74,
                           "creationTime": 0,
+                          "folded": true,
                           "name": "Comandos predeterminados (No necesitan a \"CallCommand\")",
                           "source": "",
                           "type": "BuiltinCommonInstructions::Group",
