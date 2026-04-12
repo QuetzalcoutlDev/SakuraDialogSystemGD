@@ -37,6 +37,7 @@
       "value": false
     },
     {
+      "folded": true,
       "name": "_currentCommand",
       "type": "structure",
       "children": [
@@ -64,11 +65,6 @@
       ]
     },
     {
-      "name": "_nextDialog",
-      "type": "boolean",
-      "value": false
-    },
-    {
       "folded": true,
       "name": "_options",
       "type": "structure",
@@ -86,6 +82,7 @@
       ]
     },
     {
+      "folded": true,
       "name": "_dialogSettings",
       "type": "structure",
       "children": [
@@ -167,12 +164,17 @@
       ]
     },
     {
+      "name": "_nextDialog",
+      "type": "boolean",
+      "value": false
+    },
+    {
       "name": "_returnDialog",
       "type": "boolean",
       "value": false
     },
     {
-      "name": "_returnNullPass",
+      "name": "_isChangeBranch",
       "type": "boolean",
       "value": false
     }
@@ -400,16 +402,6 @@
               "actions": [
                 {
                   "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "_returnNullPass",
-                    "False",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetReturnString"
                   },
                   "parameters": [
@@ -450,100 +442,6 @@
                       "parameters": [
                         "\"GetCurrentLine - _index = \" + _dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
                         "\"info\"",
-                        ""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "_returnDialog",
-                        "False",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "_nextDialog",
-                        "True",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                        "+",
-                        "1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "_nextDialog",
-                        "False",
-                        ""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "_nextDialog",
-                        "False",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "_returnDialog",
-                        "True",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                        "-",
-                        "1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "_returnDialog",
-                        "False",
                         ""
                       ]
                     }
@@ -598,375 +496,48 @@
                 "textG": 0,
                 "textR": 0
               },
-              "comment": "Loop principal, si el indice, supera al tamaño del loop, entonces finalizar el dialogo"
+              "comment": "No creo que esto sea realmente necesario"
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                    "value": "BuiltinCommonInstructions::Or"
                   },
-                  "parameters": [
-                    "_dialogSettings._LoopArray.currentIndexLoop",
-                    "=",
-                    "0"
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "disabled": true,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
+                  "parameters": [],
+                  "subInstructions": [
                     {
                       "type": {
-                        "value": "DebuggerTools::ConsoleLog"
+                        "value": "StringVariable"
                       },
                       "parameters": [
-                        "\"_dialogSettings._LoopArray.IndexLoop[0] = \" + _dialogSettings._LoopArray.IndexLoop[0] + \" - _dialogSettings._LoopArray.IndexLoopSize[0]\" + _dialogSettings._LoopArray.IndexLoopSize[0]",
-                        "\"info\"",
-                        ""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "folded": true,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::CompareNumbers"
-                      },
-                      "parameters": [
-                        "_dialogSettings._LoopArray.IndexLoop[0]",
-                        ">",
-                        "_dialogSettings._LoopArray.IndexLoopSize[0]"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "_dialogIsRunning",
-                        "False",
-                        ""
-                      ]
-                    }
-                  ],
-                  "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "DebuggerTools::ConsoleLog"
-                          },
-                          "parameters": [
-                            "\"Dialogo finalizado\"",
-                            "\"warning\"",
-                            ""
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Comment",
-                      "color": {
-                        "b": 109,
-                        "g": 230,
-                        "r": 255,
-                        "textB": 0,
-                        "textG": 0,
-                        "textR": 0
-                      },
-                      "comment": "Si solo hay un elemento en la cantidad de loops, entonces ya terminar todo el loop"
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "BuiltinCommonInstructions::Or"
-                          },
-                          "parameters": [],
-                          "subInstructions": [
-                            {
-                              "type": {
-                                "value": "StringVariable"
-                              },
-                              "parameters": [
-                                "_dialogSettings._lastLineType",
-                                "=",
-                                "\"command\""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "StringVariable"
-                              },
-                              "parameters": [
-                                "_dialogSettings._lastLineType",
-                                "=",
-                                "\"pass\""
-                              ]
-                            }
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetReturnString"
-                          },
-                          "parameters": [
-                            "\"NULL\""
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "_dialogSettings._lastLineType",
-                            "=",
-                            "\"dialogue\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetReturnString"
-                          },
-                          "parameters": [
-                            "\"END\""
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Si hay más de un loop y ya se finalizo, entonces regresar al loop anterior "
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
-                  },
-                  "parameters": [
-                    "_dialogSettings._LoopArray.currentIndexLoop",
-                    ">",
-                    "0"
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "disabled": true,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "DebuggerTools::ConsoleLog"
-                      },
-                      "parameters": [
-                        "\"_dialogSettings._LoopArray.currentIndexLoop = \" + _dialogSettings._LoopArray.currentIndexLoop",
-                        "\"info\"",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "DebuggerTools::ConsoleLog"
-                      },
-                      "parameters": [
-                        "\"El loop actual es mayor que 0\"",
-                        "\"info\"",
-                        ""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Comment",
-                  "color": {
-                    "b": 109,
-                    "g": 230,
-                    "r": 255,
-                    "textB": 0,
-                    "textG": 0,
-                    "textR": 0
-                  },
-                  "comment": "Si el tamaño del indice, es mayor al tamaño del loop actual, entonces regresar al loop anterior (eliminando antes el loop actual)\n\nSi no hay más loops, se regresara al loop principal guardado en _lastLoop[0]"
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::CompareNumbers"
-                      },
-                      "parameters": [
-                        "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                        ">",
-                        "_dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop]"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "_nextDialog",
-                        "False",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "RemoveVariableAt"
-                      },
-                      "parameters": [
-                        "_dialogSettings._LoopArray.IndexLoop",
-                        "VariableChildCount(_dialogSettings._LoopArray.IndexLoop) - 1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "RemoveVariableAt"
-                      },
-                      "parameters": [
-                        "_dialogSettings._LoopArray.IndexLoopSize",
-                        "VariableChildCount(_dialogSettings._LoopArray.IndexLoop) - 1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "_dialogSettings._LoopArray.currentIndexLoop",
-                        "-",
-                        "1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "ClearVariableChildren"
-                      },
-                      "parameters": [
-                        "_dialogSettings._currentLoop"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SakuraDialogSystem::CopyArrayInArray"
-                      },
-                      "parameters": [
-                        "",
-                        "_dialogSettings._lastLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                        "_dialogSettings._currentLoop",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "_dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop]",
+                        "_dialogSettings._lastLineType",
                         "=",
-                        "VariableChildCount(_dialogSettings._currentLoop) - 1"
+                        "\"command\""
                       ]
                     },
                     {
                       "type": {
-                        "value": "SetNumberVariable"
+                        "value": "StringVariable"
                       },
                       "parameters": [
-                        "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                        "+",
-                        "1"
+                        "_dialogSettings._lastLineType",
+                        "=",
+                        "\"pass\""
                       ]
                     }
                   ]
-                },
+                }
+              ],
+              "actions": [
                 {
-                  "disabled": true,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "DebuggerTools::ConsoleLog"
-                      },
-                      "parameters": [
-                        "\" 000 - _dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop] = \" + _dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop]",
-                        "\"info\"",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "DebuggerTools::ConsoleLog"
-                      },
-                      "parameters": [
-                        "\" loop to 0 - _dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop] = \"  + _dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop]",
-                        "\"info\"",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "DebuggerTools::ConsoleLog"
-                      },
-                      "parameters": [
-                        "\" 0 _index = \" + _dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop] + \" - currentLine = \" + ToJSON(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]])",
-                        "\"info\"",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "DebuggerTools::ConsoleLog"
-                      },
-                      "parameters": [
-                        "\"El loop actual es = \" + _dialogSettings._LoopArray.currentIndexLoop + \" \" + ToJSON(_dialogSettings._currentLoop)",
-                        "\"info\"",
-                        ""
-                      ]
-                    }
+                  "type": {
+                    "value": "SetReturnString"
+                  },
+                  "parameters": [
+                    "\"NULL\""
                   ]
                 }
               ]
@@ -974,16 +545,25 @@
             {
               "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "_dialogSettings._lastLineType",
+                    "=",
+                    "\"dialogue\""
+                  ]
+                }
+              ],
               "actions": [
                 {
                   "type": {
-                    "value": "DebuggerTools::ConsoleLog"
+                    "value": "SetReturnString"
                   },
                   "parameters": [
-                    "ToJSON(_dialogSettings._LoopArray.IndexLoop) + \" currentIndexLoop = \" + _dialogSettings._LoopArray.currentIndexLoop",
-                    "\"info\"",
-                    ""
+                    "\"END\""
                   ]
                 }
               ]
@@ -1054,6 +634,43 @@
                   "parameters": [
                     "_nextDialog",
                     "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "_returnDialog",
+                    "False",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
+                    "!=",
+                    "\"dialogue\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "_nextDialog",
+                    "False",
                     ""
                   ]
                 },
@@ -1178,24 +795,13 @@
                     "value": "StringVariable"
                   },
                   "parameters": [
-                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
+                    "_dialogSettings._lastLineType",
                     "=",
                     "\"command\""
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "_currentCommand.useConditional",
-                    "True",
-                    ""
-                  ]
-                }
-              ],
+              "actions": [],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Comment",
@@ -1207,7 +813,7 @@
                     "textG": 0,
                     "textR": 0
                   },
-                  "comment": "Comprobar que la linea del comando, concuerde con el parametro\n\nPuede ser \"setVariable\""
+                  "comment": "Comprobar que la linea del comando, concuerde con el parametro"
                 },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -1254,7 +860,6 @@
                   "actions": [],
                   "events": [
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -1264,11 +869,21 @@
                           "parameters": [
                             "CommandName",
                             "=",
-                            "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]"
+                            "_currentCommand.lastName"
                           ]
                         }
                       ],
                       "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "_currentCommand.useConditional",
+                            "True",
+                            ""
+                          ]
+                        },
                         {
                           "type": {
                             "value": "SetStringVariable"
@@ -1316,134 +931,9 @@
                             "textG": 0,
                             "textR": 0
                           },
-                          "comment": "Si hay parametros, entonces almacenarlos primero en _currentCommand.parameters"
-                        },
-                        {
-                          "folded": true,
-                          "type": "BuiltinCommonInstructions::Standard",
-                          "conditions": [
-                            {
-                              "type": {
-                                "value": "BuiltinCommonInstructions::CompareNumbers"
-                              },
-                              "parameters": [
-                                "VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"])",
-                                ">",
-                                "0"
-                              ]
-                            }
-                          ],
-                          "actions": [],
-                          "events": [
-                            {
-                              "disabled": true,
-                              "type": "BuiltinCommonInstructions::Standard",
-                              "conditions": [],
-                              "actions": [
-                                {
-                                  "type": {
-                                    "value": "DebuggerTools::ConsoleLog"
-                                  },
-                                  "parameters": [
-                                    "\"cantidad de parametros de \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"] + \" = \" +   ToString(VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"]))",
-                                    "\"info\"",
-                                    ""
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "type": "BuiltinCommonInstructions::Repeat",
-                              "repeatExpression": "VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"])",
-                              "conditions": [],
-                              "actions": [
-                                {
-                                  "type": {
-                                    "value": "SetStringVariable"
-                                  },
-                                  "parameters": [
-                                    "_currentCommand.parameters[param_index]",
-                                    "=",
-                                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][param_index]"
-                                  ]
-                                }
-                              ],
-                              "events": [
-                                {
-                                  "disabled": true,
-                                  "type": "BuiltinCommonInstructions::Standard",
-                                  "conditions": [],
-                                  "actions": [
-                                    {
-                                      "type": {
-                                        "value": "DebuggerTools::ConsoleLog"
-                                      },
-                                      "parameters": [
-                                        "\"current Param = \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][param_index]",
-                                        "\"info\"",
-                                        ""
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "disabled": true,
-                                  "type": "BuiltinCommonInstructions::Standard",
-                                  "conditions": [],
-                                  "actions": [
-                                    {
-                                      "type": {
-                                        "value": "DebuggerTools::ConsoleLog"
-                                      },
-                                      "parameters": [
-                                        "\"current Param index = \" + param_index",
-                                        "\"info\"",
-                                        ""
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "BuiltinCommonInstructions::Standard",
-                                  "conditions": [],
-                                  "actions": [
-                                    {
-                                      "type": {
-                                        "value": "SetNumberVariable"
-                                      },
-                                      "parameters": [
-                                        "param_index",
-                                        "+",
-                                        "1"
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ],
-                              "variables": [
-                                {
-                                  "name": "param_index",
-                                  "type": "number",
-                                  "value": 0
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "BuiltinCommonInstructions::Comment",
-                          "color": {
-                            "b": 109,
-                            "g": 230,
-                            "r": 255,
-                            "textB": 0,
-                            "textG": 0,
-                            "textR": 0
-                          },
                           "comment": "Al almacenarlos en _currentCommand.parameters, guardar los comandos en la en la variable _currentCommand.lastParameters, esto para evitar que si el indice actual es 2, pero avanza ahora mismo al 3, la expresión GetCommandParameter pueda obtener los parametros del indice 2"
                         },
                         {
-                          "folded": true,
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
                             {
@@ -1492,6 +982,23 @@
                                   "value": 0
                                 }
                               ]
+                            },
+                            {
+                              "disabled": true,
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "DebuggerTools::ConsoleLog"
+                                  },
+                                  "parameters": [
+                                    "\"lastParameters = \" + ToJSON(_currentCommand.lastParameters)",
+                                    "\"info\"",
+                                    ""
+                                  ]
+                                }
+                              ]
                             }
                           ]
                         },
@@ -1501,91 +1008,12 @@
                           "actions": [
                             {
                               "type": {
-                                "value": "SetNumberVariable"
-                              },
-                              "parameters": [
-                                "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                                "+",
-                                "1"
-                              ]
-                            },
-                            {
-                              "type": {
                                 "value": "ClearVariableChildren"
                               },
                               "parameters": [
                                 "_currentCommand.parameters"
                               ]
-                            },
-                            {
-                              "type": {
-                                "value": "SetBooleanVariable"
-                              },
-                              "parameters": [
-                                "_currentCommand.useConditional",
-                                "False",
-                                ""
-                              ]
                             }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Comment",
-                      "color": {
-                        "b": 109,
-                        "g": 230,
-                        "r": 255,
-                        "textB": 0,
-                        "textG": 0,
-                        "textR": 0
-                      },
-                      "comment": "Si el comando se se llama, no concuerda con el de actual (ejemplo, ese comando esta dentro de un bucle) y para evitar que el juego lo llame antes, entonces saltar"
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "BooleanVariable"
-                          },
-                          "parameters": [
-                            "_currentCommand.useConditional",
-                            "True",
-                            "LineType"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "BuiltinCommonInstructions::CompareStrings"
-                          },
-                          "parameters": [
-                            "CommandName",
-                            "=",
-                            "_currentCommand.lastName"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                            "+",
-                            "1"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "SetBooleanVariable"
-                          },
-                          "parameters": [
-                            "_currentCommand.useConditional",
-                            "False",
-                            ""
                           ]
                         }
                       ]
@@ -1670,16 +1098,45 @@
           "conditions": [
             {
               "type": {
-                "value": "BooleanVariable"
+                "value": "SakuraDialogSystem::IsDialogRunning"
               },
               "parameters": [
-                "_dialogIsRunning",
-                "True",
+                "",
                 ""
               ]
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "_dialogSettings._lastLineType",
+                "=",
+                "\"\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "_nextDialog",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "_returnDialog",
+                "False",
+                ""
+              ]
+            },
             {
               "type": {
                 "value": "SetStringVariable"
@@ -1703,7 +1160,15 @@
                 "value": "ClearVariableChildren"
               },
               "parameters": [
-                "_dialogSettings._currentLoop"
+                "_dialogSettings._LoopArray.IndexLoop"
+              ]
+            },
+            {
+              "type": {
+                "value": "ClearVariableChildren"
+              },
+              "parameters": [
+                "_dialogSettings._LoopArray.IndexLoopSize"
               ]
             },
             {
@@ -1713,61 +1178,16 @@
               "parameters": [
                 "",
                 "_dialogSettings._dialogStruct[\"labels\"][_dialogSettings._currentBranch]",
-                "_dialogSettings._currentLoop",
+                "TMPLoop",
                 ""
               ]
             },
             {
               "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "_dialogSettings._LoopArray.IndexLoop[0]",
-                "=",
-                "VariableChildCount(_dialogSettings._currentLoop)"
-              ]
-            }
-          ]
-        },
-        {
-          "disabled": true,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "DebuggerTools::ConsoleLog"
-              },
-              "parameters": [
-                "\"SetBranch - _dialogSettings._LoopArray.IndexLoopSize[0] = \"  + _dialogSettings._LoopArray.IndexLoopSize[0]",
-                "\"info\"",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Esto regresara el _LoopArray.currentIndexLoop a 0, y eliminar todos los hijos de _LoopArray.IndexLoop"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
                 "value": "ClearVariableChildren"
               },
               "parameters": [
-                "_dialogSettings._LoopArray.IndexLoop"
+                "_dialogSettings._currentLoop"
               ]
             },
             {
@@ -1782,11 +1202,56 @@
             },
             {
               "type": {
-                "value": "PushNumber"
+                "value": "SakuraDialogSystem::CopyArrayInArray"
               },
               "parameters": [
-                "_dialogSettings._LoopArray.IndexLoop",
-                "0"
+                "",
+                "TMPLoop",
+                "_dialogSettings._currentLoop",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "_dialogSettings._LoopArray.IndexLoopSize[0]",
+                "=",
+                "VariableChildCount(_dialogSettings._currentLoop) - 1"
+              ]
+            }
+          ],
+          "variables": [
+            {
+              "name": "TMPLoop",
+              "type": "array",
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "_isChangeBranch",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"SetBranch - \" + _dialogSettings._currentBranch + \" - _dialogSettings._LoopArray.IndexLoopSize[0] = \"  + _dialogSettings._LoopArray.IndexLoopSize[0]",
+                "\"info\"",
+                ""
               ]
             }
           ]
@@ -1818,16 +1283,6 @@
               "parameters": [
                 "_dialogIsRunning",
                 "True",
-                "LineType"
-              ]
-            },
-            {
-              "type": {
-                "value": "BooleanVariable"
-              },
-              "parameters": [
-                "_currentCommand.useConditional",
-                "False",
                 "LineType"
               ]
             }
@@ -2175,13 +1630,613 @@
                     "textG": 0,
                     "textR": 0
                   },
-                  "comment": "No contar las lineas null, pass y comment"
+                  "comment": "Esto evita que se bloquee en la linea de comandos y pass"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "_isChangeBranch",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "_isChangeBranch",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "ir a la siguiente linea de dialogo"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "_nextDialog",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "_returnDialog",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "_nextDialog",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "_returnDialog",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "_nextDialog",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "_returnDialog",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
+                        "-",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Si no se usa la condición CallCommand, saltar sin tomar en cuenta los comandos"
                 },
                 {
                   "folded": true,
-                  "infiniteLoopWarning": true,
-                  "type": "BuiltinCommonInstructions::While",
-                  "whileConditions": [
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
+                        "=",
+                        "\"command\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "_currentCommand.lastName",
+                        "=",
+                        "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._lastLineType",
+                        "=",
+                        "\"command\""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Comandos predeterminados (No necesitan a \"CallCommand\")",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Detener la ejecución del dialogo"
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]",
+                                "=",
+                                "\"end\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SakuraDialogSystem::StopDialog"
+                              },
+                              "parameters": [
+                                "",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "_isChangeBranch",
+                                "False",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]",
+                                "=",
+                                "\"jump\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SakuraDialogSystem::SetBranch"
+                              },
+                              "parameters": [
+                                "",
+                                "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][0]",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "DebuggerTools::ConsoleLog"
+                              },
+                              "parameters": [
+                                "\"0 SI\"",
+                                "\"info\"",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "_isChangeBranch",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]",
+                                "=",
+                                "\"set_variable\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SakuraDialogSystem::SetVariable"
+                              },
+                              "parameters": [
+                                "",
+                                "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][0]",
+                                "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][1]",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Si hay parametros, entonces almacenarlos primero en _currentCommand.parameters"
+                    },
+                    {
+                      "folded": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"])",
+                            ">",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "disabled": true,
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "DebuggerTools::ConsoleLog"
+                              },
+                              "parameters": [
+                                "\"cantidad de parametros de \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"] + \" = \" +   ToString(VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"]))",
+                                "\"info\"",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "folded": true,
+                          "type": "BuiltinCommonInstructions::Repeat",
+                          "repeatExpression": "VariableChildCount(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"])",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "_currentCommand.parameters[param_index]",
+                                "=",
+                                "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][param_index]"
+                              ]
+                            }
+                          ],
+                          "events": [
+                            {
+                              "disabled": true,
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "DebuggerTools::ConsoleLog"
+                                  },
+                                  "parameters": [
+                                    "\"current Param = \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"][param_index]",
+                                    "\"info\"",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "disabled": true,
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "DebuggerTools::ConsoleLog"
+                                  },
+                                  "parameters": [
+                                    "\"current Param index = \" + param_index",
+                                    "\"info\"",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetNumberVariable"
+                                  },
+                                  "parameters": [
+                                    "param_index",
+                                    "+",
+                                    "1"
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "variables": [
+                            {
+                              "name": "param_index",
+                              "type": "number",
+                              "value": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "disabled": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "DebuggerTools::ConsoleLog"
+                          },
+                          "parameters": [
+                            "\"command name = \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"] + \" - params = \" + ToJSON(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"])",
+                            "\"info\"",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "disabled": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "DebuggerTools::ConsoleLog"
+                          },
+                          "parameters": [
+                            "\"nextDialog = \" + _nextDialog",
+                            "\"info\"",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "folded": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BooleanVariable"
+                          },
+                          "parameters": [
+                            "_isChangeBranch",
+                            "False",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "_returnDialog",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "_nextDialog",
+                                "False",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "_returnDialog",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "_nextDialog",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "_nextDialog",
+                                "True",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "_returnDialog",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "disabled": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "DebuggerTools::ConsoleLog"
+                          },
+                          "parameters": [
+                            "\"_currentCommand.name = \" + ToJSON(_currentCommand.name)",
+                            "\"info\"",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "No contar las lineas pass"
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
                     {
                       "type": {
                         "value": "StringVariable"
@@ -2193,7 +2248,6 @@
                       ]
                     }
                   ],
-                  "conditions": [],
                   "actions": [
                     {
                       "type": {
@@ -2215,53 +2269,103 @@
                             "value": "BooleanVariable"
                           },
                           "parameters": [
-                            "_returnNullPass",
-                            "=",
+                            "_isChangeBranch",
+                            "False",
                             ""
                           ]
                         }
                       ],
-                      "actions": [
+                      "actions": [],
+                      "events": [
                         {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                            "+",
-                            "1"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "_nextDialog",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "_nextDialog",
+                                "True",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "_returnDialog",
+                                "False",
+                                ""
+                              ]
+                            }
                           ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
+                        },
                         {
-                          "type": {
-                            "value": "BooleanVariable"
-                          },
-                          "parameters": [
-                            "_returnNullPass",
-                            "True",
-                            ""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                            "-",
-                            "1"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "_returnDialog",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "_nextDialog",
+                                "False",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "_returnDialog",
+                                "True",
+                                ""
+                              ]
+                            }
                           ]
                         }
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": ""
                 },
                 {
                   "folded": true,
@@ -2286,6 +2390,16 @@
                       "parameters": [
                         "_options.canSelect",
                         "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "_nextDialog",
+                        "False",
                         ""
                       ]
                     }
@@ -2365,18 +2479,7 @@
                       ]
                     }
                   ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "_nextDialog",
-                        "False",
-                        ""
-                      ]
-                    }
-                  ],
+                  "actions": [],
                   "events": [
                     {
                       "type": "BuiltinCommonInstructions::Comment",
@@ -2391,7 +2494,6 @@
                       "comment": "conditionContent almacena el valor de cada llave condicional, por ejemplo if\n\nSe ejecuta siempre y cuando, ni if, o los else if no pasen a stopRepeat a verdadero\n\nSi nunca if o else if, pasaron a stopRepeat a verdadero, entonces se tomara a else como el camino posible"
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::ForEachChildVariable",
                       "iterableVariableName": "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"conditions\"]",
                       "valueIteratorVariableName": "conditionContent",
@@ -2553,12 +2655,12 @@
                       "actions": [
                         {
                           "type": {
-                            "value": "SetNumberVariable"
+                            "value": "SetBooleanVariable"
                           },
                           "parameters": [
-                            "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                            "+",
-                            "1"
+                            "_nextDialog",
+                            "True",
+                            ""
                           ]
                         }
                       ],
@@ -2780,6 +2882,329 @@
                       "name": "lastConditionName",
                       "type": "string",
                       "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Loop principal, si el indice, supera al tamaño del loop, entonces finalizar el dialogo"
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "_dialogSettings._LoopArray.currentIndexLoop",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "disabled": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "DebuggerTools::ConsoleLog"
+                          },
+                          "parameters": [
+                            "\"_dialogSettings._LoopArray.IndexLoop[0] = \" + _dialogSettings._LoopArray.IndexLoop[0] + \" - _dialogSettings._LoopArray.IndexLoopSize[0]\" + _dialogSettings._LoopArray.IndexLoopSize[0]",
+                            "\"info\"",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "folded": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "_dialogSettings._LoopArray.IndexLoop[0]",
+                            ">",
+                            "_dialogSettings._LoopArray.IndexLoopSize[0] - 1"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "_dialogIsRunning",
+                            "False",
+                            ""
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "disabled": true,
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "DebuggerTools::ConsoleLog"
+                              },
+                              "parameters": [
+                                "\"Dialogo finalizado\"",
+                                "\"warning\"",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Si hay más de un loop y ya se finalizo, entonces regresar al loop anterior "
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "_dialogSettings._LoopArray.currentIndexLoop",
+                        ">",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "disabled": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "DebuggerTools::ConsoleLog"
+                          },
+                          "parameters": [
+                            "\"_dialogSettings._LoopArray.currentIndexLoop = \" + _dialogSettings._LoopArray.currentIndexLoop",
+                            "\"info\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "DebuggerTools::ConsoleLog"
+                          },
+                          "parameters": [
+                            "\"El loop actual es mayor que 0\"",
+                            "\"info\"",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Si el tamaño del indice, es mayor al tamaño del loop actual, entonces regresar al loop anterior (eliminando antes el loop actual)\n\nSi no hay más loops, se regresara al loop principal guardado en _lastLoop[0]"
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
+                            ">",
+                            "_dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop]"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "_nextDialog",
+                            "False",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "RemoveVariableAt"
+                          },
+                          "parameters": [
+                            "_dialogSettings._LoopArray.IndexLoop",
+                            "VariableChildCount(_dialogSettings._LoopArray.IndexLoop) - 1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "RemoveVariableAt"
+                          },
+                          "parameters": [
+                            "_dialogSettings._LoopArray.IndexLoopSize",
+                            "VariableChildCount(_dialogSettings._LoopArray.IndexLoop) - 1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "_dialogSettings._LoopArray.currentIndexLoop",
+                            "-",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ClearVariableChildren"
+                          },
+                          "parameters": [
+                            "_dialogSettings._currentLoop"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SakuraDialogSystem::CopyArrayInArray"
+                          },
+                          "parameters": [
+                            "",
+                            "_dialogSettings._lastLoop[_dialogSettings._LoopArray.currentIndexLoop]",
+                            "_dialogSettings._currentLoop",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "_dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop]",
+                            "=",
+                            "VariableChildCount(_dialogSettings._currentLoop) - 1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
+                            "+",
+                            "1"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "disabled": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "DebuggerTools::ConsoleLog"
+                          },
+                          "parameters": [
+                            "\" 000 - _dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop] = \" + _dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop]",
+                            "\"info\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "DebuggerTools::ConsoleLog"
+                          },
+                          "parameters": [
+                            "\" loop to 0 - _dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop] = \"  + _dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop]",
+                            "\"info\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "DebuggerTools::ConsoleLog"
+                          },
+                          "parameters": [
+                            "\" 0 _index = \" + _dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop] + \" - currentLine = \" + ToJSON(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]])",
+                            "\"info\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "DebuggerTools::ConsoleLog"
+                          },
+                          "parameters": [
+                            "\"El loop actual es = \" + _dialogSettings._LoopArray.currentIndexLoop + \" \" + ToJSON(_dialogSettings._currentLoop)",
+                            "\"info\"",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "disabled": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "DebuggerTools::ConsoleLog"
+                      },
+                      "parameters": [
+                        "ToJSON(_dialogSettings._LoopArray.IndexLoop) + \" currentIndexLoop = \" + _dialogSettings._LoopArray.currentIndexLoop",
+                        "\"info\"",
+                        ""
+                      ]
                     }
                   ]
                 }
@@ -3358,424 +3783,9 @@
                     "value": "SetBooleanVariable"
                   },
                   "parameters": [
-                    "_returnNullPass",
-                    "True",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
                     "_nextDialog",
                     "False",
                     ""
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": [],
-      "objectGroups": []
-    },
-    {
-      "fullName": "",
-      "functionType": "Action",
-      "name": "onScenePreEvents",
-      "sentence": "",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BooleanVariable"
-              },
-              "parameters": [
-                "_dialogIsRunning",
-                "True",
-                "LineType"
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
-                  },
-                  "parameters": [
-                    "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                    "<=",
-                    "_dialogSettings._LoopArray.IndexLoopSize[_dialogSettings._LoopArray.currentIndexLoop]"
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Comment",
-                  "color": {
-                    "b": 109,
-                    "g": 230,
-                    "r": 255,
-                    "textB": 0,
-                    "textG": 0,
-                    "textR": 0
-                  },
-                  "comment": "Si no se usa la condición CallCommand, saltar sin tomar en cuenta los comandos"
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "_currentCommand.useConditional",
-                        "False",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [],
-                  "events": [
-                    {
-                      "folded": true,
-                      "infiniteLoopWarning": true,
-                      "type": "BuiltinCommonInstructions::While",
-                      "whileConditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"type\"]",
-                            "=",
-                            "\"command\""
-                          ]
-                        }
-                      ],
-                      "conditions": [],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetStringVariable"
-                          },
-                          "parameters": [
-                            "_currentCommand.lastName",
-                            "=",
-                            "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "SetStringVariable"
-                          },
-                          "parameters": [
-                            "_dialogSettings._lastLineType",
-                            "=",
-                            "\"command\""
-                          ]
-                        }
-                      ],
-                      "events": [
-                        {
-                          "colorB": 228,
-                          "colorG": 176,
-                          "colorR": 74,
-                          "creationTime": 0,
-                          "folded": true,
-                          "name": "Comandos predeterminados (No necesitan a \"CallCommand\")",
-                          "source": "",
-                          "type": "BuiltinCommonInstructions::Group",
-                          "events": [
-                            {
-                              "type": "BuiltinCommonInstructions::Comment",
-                              "color": {
-                                "b": 109,
-                                "g": 230,
-                                "r": 255,
-                                "textB": 0,
-                                "textG": 0,
-                                "textR": 0
-                              },
-                              "comment": "Detener la ejecución del dialogo"
-                            },
-                            {
-                              "type": "BuiltinCommonInstructions::Standard",
-                              "conditions": [
-                                {
-                                  "type": {
-                                    "value": "StringVariable"
-                                  },
-                                  "parameters": [
-                                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]",
-                                    "=",
-                                    "\"end\""
-                                  ]
-                                }
-                              ],
-                              "actions": [
-                                {
-                                  "type": {
-                                    "value": "SakuraDialogSystem::StopDialog"
-                                  },
-                                  "parameters": [
-                                    "",
-                                    ""
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "type": "BuiltinCommonInstructions::Standard",
-                              "conditions": [
-                                {
-                                  "type": {
-                                    "value": "StringVariable"
-                                  },
-                                  "parameters": [
-                                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]",
-                                    "=",
-                                    "\"jump\""
-                                  ]
-                                }
-                              ],
-                              "actions": [
-                                {
-                                  "type": {
-                                    "value": "SakuraDialogSystem::SetBranch"
-                                  },
-                                  "parameters": [
-                                    "",
-                                    "SakuraDialogSystem::GetCommandParameter(0)",
-                                    ""
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "type": "BuiltinCommonInstructions::Standard",
-                              "conditions": [
-                                {
-                                  "type": {
-                                    "value": "StringVariable"
-                                  },
-                                  "parameters": [
-                                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]",
-                                    "=",
-                                    "\"set_variable\""
-                                  ]
-                                }
-                              ],
-                              "actions": [
-                                {
-                                  "type": {
-                                    "value": "SakuraDialogSystem::SetVariable"
-                                  },
-                                  "parameters": [
-                                    "",
-                                    "SakuraDialogSystem::GetCommandParameter(0)",
-                                    "SakuraDialogSystem::GetCommandParameter(1)",
-                                    ""
-                                  ]
-                                }
-                              ]
-                            }
-                          ],
-                          "parameters": []
-                        },
-                        {
-                          "disabled": true,
-                          "type": "BuiltinCommonInstructions::Standard",
-                          "conditions": [],
-                          "actions": [
-                            {
-                              "type": {
-                                "value": "DebuggerTools::ConsoleLog"
-                              },
-                              "parameters": [
-                                "\"command name = \" + _dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"] + \" - params = \" + ToJSON(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"params\"])",
-                                "\"info\"",
-                                ""
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "BuiltinCommonInstructions::Standard",
-                          "conditions": [],
-                          "actions": [
-                            {
-                              "type": {
-                                "value": "SetStringVariable"
-                              },
-                              "parameters": [
-                                "_currentCommand.lastName",
-                                "=",
-                                "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "SetStringVariable"
-                              },
-                              "parameters": [
-                                "_dialogSettings._lastLineType",
-                                "=",
-                                "\"command\""
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "BuiltinCommonInstructions::Standard",
-                          "conditions": [
-                            {
-                              "type": {
-                                "value": "BooleanVariable"
-                              },
-                              "parameters": [
-                                "_returnNullPass",
-                                "True",
-                                ""
-                              ]
-                            }
-                          ],
-                          "actions": [
-                            {
-                              "type": {
-                                "value": "SetNumberVariable"
-                              },
-                              "parameters": [
-                                "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                                "-",
-                                "1"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "BuiltinCommonInstructions::Standard",
-                          "conditions": [
-                            {
-                              "type": {
-                                "value": "BooleanVariable"
-                              },
-                              "parameters": [
-                                "_returnNullPass",
-                                "False",
-                                ""
-                              ]
-                            }
-                          ],
-                          "actions": [
-                            {
-                              "type": {
-                                "value": "SetNumberVariable"
-                              },
-                              "parameters": [
-                                "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                                "+",
-                                "1"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "disabled": true,
-                          "type": "BuiltinCommonInstructions::Standard",
-                          "conditions": [],
-                          "actions": [
-                            {
-                              "type": {
-                                "value": "DebuggerTools::ConsoleLog"
-                              },
-                              "parameters": [
-                                "\"_currentCommand.name = \" + ToJSON(_currentCommand.name)",
-                                "\"info\"",
-                                ""
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Comment",
-                  "color": {
-                    "b": 109,
-                    "g": 230,
-                    "r": 255,
-                    "textB": 0,
-                    "textG": 0,
-                    "textR": 0
-                  },
-                  "comment": "Si se intento llamar un comando y no se uso \"CallComand\" entonces avanzar para evitar bloqueo\n\n(Parece que volvio a funcionar, si funciona no lo toques)\n\nSe quedaba bloqueado en un comando al que no se le usaba \"CallCommand\""
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "_currentCommand.useConditional",
-                        "True",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [],
-                  "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]",
-                            "!=",
-                            "_currentCommand.lastName"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]",
-                            "+",
-                            "1"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "SetBooleanVariable"
-                          },
-                          "parameters": [
-                            "_currentCommand.useConditional",
-                            "False",
-                            ""
-                          ]
-                        }
-                      ]
-                    }
                   ]
                 }
               ]
@@ -3994,9 +4004,6 @@
       },
       {
         "functionName": "onScenePostEvents"
-      },
-      {
-        "functionName": "onScenePreEvents"
       },
       {
         "functionName": "ConfirmSelection"
