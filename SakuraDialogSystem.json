@@ -316,7 +316,7 @@
       "fullName": "Get dialogue line",
       "functionType": "StringExpression",
       "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-dialogue-line",
-      "name": "GetCurrentLine",
+      "name": "CurrentLine",
       "sentence": "",
       "events": [
         {
@@ -700,7 +700,7 @@
       "fullName": "Get line type",
       "functionType": "Condition",
       "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-line-type",
-      "name": "GetLineType",
+      "name": "LineType",
       "sentence": "Line type _PARAM1_",
       "events": [
         {
@@ -1277,7 +1277,7 @@
       "fullName": "Get command parameter",
       "functionType": "StringExpression",
       "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-command-parameter",
-      "name": "GetCommandParameter",
+      "name": "CommandParameter",
       "sentence": "",
       "events": [
         {
@@ -1520,7 +1520,7 @@
       "fullName": "Get who",
       "functionType": "StringExpression",
       "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-who",
-      "name": "GetWho",
+      "name": "Who",
       "sentence": "",
       "events": [
         {
@@ -3231,7 +3231,7 @@
       "fullName": "Get options number",
       "functionType": "Expression",
       "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-options-number",
-      "name": "GetOptionsCount",
+      "name": "OptionsCount",
       "sentence": "",
       "events": [
         {
@@ -3301,7 +3301,7 @@
       "fullName": "Get option name",
       "functionType": "StringExpression",
       "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-option-name",
-      "name": "GetOptionName",
+      "name": "OptionName",
       "sentence": "",
       "events": [
         {
@@ -4009,13 +4009,13 @@
         "functionName": "SetBranch"
       },
       {
-        "functionName": "GetCurrentLine"
+        "functionName": "CurrentLine"
       },
       {
-        "functionName": "GetOptionsCount"
+        "functionName": "OptionsCount"
       },
       {
-        "functionName": "GetOptionName"
+        "functionName": "OptionName"
       },
       {
         "functionName": "onScenePostEvents"
@@ -4027,10 +4027,10 @@
         "functionName": "CallCommand"
       },
       {
-        "functionName": "GetCommandParameter"
+        "functionName": "CommandParameter"
       },
       {
-        "functionName": "GetWho"
+        "functionName": "Who"
       },
       {
         "functionName": "NextDialog"
@@ -4039,7 +4039,7 @@
         "functionName": "ReturnDialog"
       },
       {
-        "functionName": "GetLineType"
+        "functionName": "LineType"
       },
       {
         "functionName": "IsDialogRunning"

@@ -6,7 +6,7 @@ This guide is designed to help you quickly understand the concepts of Sakura Dia
 
 - Install the latest version of GDevelop
 - Install the latest version of Visual Studio Code
-- Download the Sakura Script extension from [here](https://github.com/QuetzalcoutlDev/sakura-script/releases/).
+- Download the Sakura Script extension from [here](https://github.com/QuetzalcoutlDev/sakura-script/releases/) Or you can download the Sakura Script extension from the Visual Studio Code extension marketplac.
 - Download and install the Sakura Dialog System extension in your project [download it here](https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/releases/)
 
 # Conditions, actions and expressions
