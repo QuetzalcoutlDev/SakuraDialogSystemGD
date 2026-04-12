@@ -5,7 +5,7 @@
   "extensionNamespace": "",
   "fullName": "Sakura Dialog System",
   "gdevelopVersion": "",
-  "helpPath": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/",
+  "helpPath": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md",
   "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWNvbW1lbnQtdGV4dCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik05LDIyQTEsMSAwIDAsMSA4LDIxVjE4SDRBMiwyIDAgMCwxIDIsMTZWNEMyLDIuODkgMi45LDIgNCwySDIwQTIsMiAwIDAsMSAyMiw0VjE2QTIsMiAwIDAsMSAyMCwxOEgxMy45TDEwLjIsMjEuNzFDMTAsMjEuOSA5Ljc1LDIyIDkuNSwyMlYyMkg5TTUsNVY3SDE5VjVINU01LDlWMTFIMTNWOUg1TTUsMTNWMTVIMTVWMTNINVoiIC8+PC9zdmc+",
   "name": "SakuraDialogSystem",
   "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/17eca6f19dabe086a3da00dd623928f85e3f4b6749a98430b5da2bfe9506d1bb_comment-text.svg",
@@ -185,6 +185,7 @@
       "description": "Load the dialog file in JSON format created with Sakura Script from Visual Studio Code.\n\nBy default, the \"Start\" branch is always loaded unless another branch is specified.",
       "fullName": "Load dialog file ",
       "functionType": "Action",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#load-dialog-file",
       "name": "LoadJSON",
       "sentence": "Load the _PARAM1_ dialog file",
       "events": [
@@ -314,6 +315,7 @@
       "description": "Get dialogue line, if after advancing to the end there is nothing more to do (be it a command to go to another branch), the dialogue will end.",
       "fullName": "Get dialogue line",
       "functionType": "StringExpression",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-dialogue-line",
       "name": "GetCurrentLine",
       "sentence": "",
       "events": [
@@ -581,6 +583,7 @@
       "description": "Go to the next line of dialogue.",
       "fullName": "Go to the next line",
       "functionType": "Action",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#go-to-next-line",
       "name": "NextDialog",
       "sentence": "Go to the next line of dialogue",
       "events": [
@@ -696,6 +699,7 @@
       "description": "Get the line type\n\nIt can be \"dialogue\", \"command\", \"option\", or \"conditional\".",
       "fullName": "Get line type",
       "functionType": "Condition",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-line-type",
       "name": "GetLineType",
       "sentence": "Line type _PARAM1_",
       "events": [
@@ -756,6 +760,7 @@
       "description": "A command is a special line of code used to trigger an action within the game.\n\nFor example, changing a background, moving a character, etc.",
       "fullName": "Command called",
       "functionType": "Condition",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#command-called",
       "name": "CallCommand",
       "sentence": "The command is called _PARAM1_",
       "events": [
@@ -1078,6 +1083,7 @@
       "description": "Go to another dialogue branch in your file.",
       "fullName": "Go to branch",
       "functionType": "Action",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#go-to-branch",
       "name": "SetBranch",
       "sentence": "Go to branch _PARAM1_",
       "events": [
@@ -1270,6 +1276,7 @@
       "description": "Get the value of a command parameter.",
       "fullName": "Get command parameter",
       "functionType": "StringExpression",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-command-parameter",
       "name": "GetCommandParameter",
       "sentence": "",
       "events": [
@@ -1447,6 +1454,7 @@
       "description": "Stop the execution of the dialogue.",
       "fullName": "Stop dialogue",
       "functionType": "Action",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#stop-dialogue",
       "name": "StopDialog",
       "sentence": "Stop the execution of the dialogue",
       "events": [
@@ -1474,6 +1482,7 @@
       "description": "The dialogue is running.",
       "fullName": "Dialogue running",
       "functionType": "Condition",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#dialog-is-running",
       "name": "IsDialogRunning",
       "sentence": "Dialogue is running",
       "events": [
@@ -1510,6 +1519,7 @@
       "description": "Obtain the one who is currently a speaker.",
       "fullName": "Get who",
       "functionType": "StringExpression",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-who",
       "name": "GetWho",
       "sentence": "",
       "events": [
@@ -3220,6 +3230,7 @@
       "description": "Return the number of options.",
       "fullName": "Get options number",
       "functionType": "Expression",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-options-number",
       "name": "GetOptionsCount",
       "sentence": "",
       "events": [
@@ -3289,6 +3300,7 @@
       "description": "Return the name of an option using its index.",
       "fullName": "Get option name",
       "functionType": "StringExpression",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#get-option-name",
       "name": "GetOptionName",
       "sentence": "",
       "events": [
@@ -3411,8 +3423,9 @@
       "description": "Confirm option selection using the index of the same.",
       "fullName": "Confirm option selection ",
       "functionType": "Action",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#confirm-option-selection",
       "name": "ConfirmSelection",
-      "sentence": "Confirm selection of option _PARAM1_",
+      "sentence": "Confirm option _PARAM1_",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -3797,9 +3810,10 @@
       "objectGroups": []
     },
     {
-      "description": "Save the dialog position in a variable.",
+      "description": "Save the dialog position in a variable.\n\nNote: This does not save your characters' positions (you'll need to do that manually) or previously saved commands.",
       "fullName": "Save State",
       "functionType": "Action",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#save-state",
       "name": "SaveState",
       "sentence": "Save state in the variable _PARAM1_",
       "events": [
@@ -3855,6 +3869,7 @@
       "description": "Load dialog position from a variable.\n\nNote: This action currently does not take into account changes to the dialog file (e.g., you changed or deleted a line of dialogue).",
       "fullName": "Load State",
       "functionType": "Action",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/blob/master/docs/README.md#load-state",
       "name": "LoadState",
       "sentence": "Load state from the variable _PARAM1_",
       "events": [
