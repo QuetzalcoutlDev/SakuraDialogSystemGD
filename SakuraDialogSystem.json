@@ -10,7 +10,7 @@
   "name": "SakuraDialogSystem",
   "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/17eca6f19dabe086a3da00dd623928f85e3f4b6749a98430b5da2bfe9506d1bb_comment-text.svg",
   "shortDescription": "A dialogue system built from scratch that aims to be more modern.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": [
     "A dialog system built from scratch that aims to be more modern and make creating dialogs in GDevelop even easier.",
     "",
@@ -1008,6 +1008,18 @@
                           ]
                         },
                         {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Después de llamar al comando, que siempre es un frame después de cuando se llamo\n\nSe elimina el nombre una vez llamado, para evitar bloqueos con comandos que bloquean el avance de dialogo"
+                        },
+                        {
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [],
                           "actions": [
@@ -1017,6 +1029,16 @@
                               },
                               "parameters": [
                                 "_currentCommand.parameters"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "_currentCommand.lastName",
+                                "=",
+                                "\"\""
                               ]
                             }
                           ]
@@ -1788,7 +1810,6 @@
                   "comment": "Si no se usa la condición CallCommand, saltar sin tomar en cuenta los comandos"
                 },
                 {
-                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2120,7 +2141,6 @@
                       ]
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -3997,6 +4017,44 @@
         }
       ],
       "objectGroups": []
+    },
+    {
+      "description": "Get current branch name.",
+      "fullName": "Get branch name",
+      "functionType": "StringExpression",
+      "name": "BranchName",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SakuraDialogSystem::IsDialogRunning"
+              },
+              "parameters": [
+                "",
+                "\"dialogue\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnString"
+              },
+              "parameters": [
+                "_dialogSettings._currentBranch"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
     }
   ],
   "eventsFunctionsFolderStructure": {
@@ -4061,6 +4119,9 @@
       },
       {
         "functionName": "SetVariable"
+      },
+      {
+        "functionName": "BranchName"
       }
     ]
   },

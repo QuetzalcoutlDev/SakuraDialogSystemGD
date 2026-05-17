@@ -1,0 +1,184 @@
+{
+  "labels": {
+    "Start": [
+      {
+        "type": "dialogue",
+        "who": "",
+        "line": "Hello!"
+      },
+      {
+        "type": "dialogue",
+        "who": "",
+        "line": "This is a test of Sakura Dialog System for GDevelop."
+      },
+      {
+        "type": "dialogue",
+        "who": "",
+        "line": "Now I should have a name..."
+      },
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "Now I should!"
+      },
+      {
+        "type": "command",
+        "line": "change_bg_color",
+        "params": [
+          "HOLA"
+        ]
+      },
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "Should I change the background?"
+      },
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "Great!"
+      },
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "Do you want to make a character appear?"
+      },
+      {
+        "type": "options",
+        "choices": [
+          {
+            "text": "Yes",
+            "block": [
+              {
+                "type": "command",
+                "line": "show_nami",
+                "params": [
+                  ""
+                ]
+              },
+              {
+                "type": "dialogue",
+                "who": "",
+                "line": "..."
+              },
+              {
+                "type": "dialogue",
+                "who": "",
+                "line": "Magic? Haha"
+              }
+            ]
+          },
+          {
+            "text": "No",
+            "block": [
+              {
+                "type": "dialogue",
+                "who": "",
+                "line": "..."
+              },
+              {
+                "type": "command",
+                "line": "jump",
+                "params": [
+                  "Test"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "Hmm..."
+      },
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "How much money would I need to buy a console?"
+      },
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "Let's see how much I have..."
+      },
+      {
+        "type": "conditional",
+        "conditions": {
+          "if": {
+            "condition": "money == 300",
+            "block": [
+              {
+                "type": "dialogue",
+                "who": "Sakura",
+                "line": "The console costs $350, I'm $50 short..."
+              }
+            ]
+          },
+          "elif_0": {
+            "condition": "money <= 300",
+            "block": [
+              {
+                "type": "dialogue",
+                "who": "Sakura",
+                "line": "I don't have enough to buy the console..."
+              }
+            ]
+          },
+          "else": {
+            "block": [
+              {
+                "type": "dialogue",
+                "who": "Sakura",
+                "line": "I don't know how much the console costs..."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "I think that's all for now."
+      },
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "See you!"
+      },
+      {
+        "type": "command",
+        "line": "end",
+        "params": [
+          ""
+        ]
+      }
+    ],
+    "Test": [
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "You're leaving so soon?"
+      },
+      {
+        "type": "command",
+        "line": "other_bg_change_color",
+        "params": [
+          ""
+        ]
+      },
+      {
+        "type": "dialogue",
+        "who": "Sakura",
+        "line": "That's too bad..."
+      },
+      {
+        "type": "command",
+        "line": "end",
+        "params": [
+          ""
+        ]
+      }
+    ]
+  }
+}

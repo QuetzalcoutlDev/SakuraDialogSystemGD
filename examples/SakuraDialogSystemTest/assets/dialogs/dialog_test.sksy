@@ -1,0 +1,47 @@
+
+label Start:
+    "Hello!"
+    "This is a test of Sakura Dialog System for GDevelop."
+    "Now I should have a name..."
+    [Sakura] "Now I should!"
+    $ change_bg_color("HOLA")
+    // This should change the background of the scene
+    [Sakura] "Should I change the background?"
+    [Sakura] "Great!"
+    [Sakura] "Do you want to make a character appear?"
+    option:
+        "Yes":
+            // Due to some strange error, it is not currently possible to call commands as the first line within a block
+            $ show_nami()
+            "..."
+            "Magic? Haha"
+        "No":
+            "..."
+            $ jump("Test")
+    [Sakura] "Hmm..."
+    [Sakura] "How much money would I need to buy a console?"
+    [Sakura] "Let's see how much I have..."
+
+    // There's a scene variable called "money"
+    // Although you can create one as a global variable
+    if money == 300:
+        [Sakura] "The console costs $350, I'm $50 short..."
+    elif money <= 300:
+        [Sakura] "I don't have enough to buy the console..."
+    else:
+        [Sakura] "I don't know how much the console costs..."
+
+    [Sakura] "I think that's all for now."
+    [Sakura] "See you!"
+
+    // End dialogue execution
+    $ end()
+
+
+label Test:
+    [Sakura] "You're leaving so soon?"
+    $ other_bg_change_color()
+    [Sakura] "That's too bad..."
+
+    // End dialogue execution
+    $ end()
