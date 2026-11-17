@@ -33,32 +33,38 @@
   "globalVariables": [
     {
       "name": "_dialogIsRunning",
+      "persistentUuid": "478f63a7-2169-497b-9fce-352dcb326d77",
       "type": "boolean",
       "value": false
     },
     {
       "folded": true,
       "name": "_currentCommand",
+      "persistentUuid": "75673d75-ea17-4900-84da-95726380d257",
       "type": "structure",
       "children": [
         {
           "name": "lastName",
+          "persistentUuid": "e97a2270-0b56-4c15-af7b-debec65c1612",
           "type": "string",
           "value": "0"
         },
         {
           "folded": true,
           "name": "lastParameters",
+          "persistentUuid": "7e5094aa-3762-4cb1-a049-d799f22109f0",
           "type": "array",
           "children": []
         },
         {
           "name": "parameters",
+          "persistentUuid": "d36a8004-f7a5-4251-8cee-90172149444f",
           "type": "array",
           "children": []
         },
         {
           "name": "useConditional",
+          "persistentUuid": "354eddcf-3181-4e77-9271-4d843291f03f",
           "type": "boolean",
           "value": false
         }
@@ -67,34 +73,46 @@
     {
       "folded": true,
       "name": "_options",
+      "persistentUuid": "146f9c55-ba9f-4ff9-bc21-ad229feee4cd",
       "type": "structure",
       "children": [
         {
           "name": "canSelect",
+          "persistentUuid": "d28164a0-7bdb-440c-98b9-2b092b4d6f98",
           "type": "boolean",
           "value": false
         },
         {
           "name": "count",
+          "persistentUuid": "692432ca-13f7-4ce6-b661-7458f4e8dfab",
           "type": "number",
           "value": 0
         }
       ]
     },
     {
-      "folded": true,
       "name": "_dialogSettings",
+      "persistentUuid": "0542ed75-f1c8-4497-93c1-a7c01b65ed5d",
       "type": "structure",
       "children": [
         {
+          "name": "History",
+          "persistentUuid": "d40130fb-529e-4580-a2d9-49056046d393",
+          "type": "array",
+          "children": []
+        },
+        {
           "name": "_LoopArray",
+          "persistentUuid": "dc101ff7-1d59-4ff6-99c3-95363c93ef07",
           "type": "structure",
           "children": [
             {
               "name": "IndexLoop",
+              "persistentUuid": "909852be-4ce1-4b21-9725-3abc21892e46",
               "type": "array",
               "children": [
                 {
+                  "persistentUuid": "096bda34-1a5d-42fb-9053-c2c0b4862b1a",
                   "type": "number",
                   "value": 0
                 }
@@ -103,9 +121,11 @@
             {
               "folded": true,
               "name": "IndexLoopSize",
+              "persistentUuid": "5b97c103-431b-4fb6-8b6b-2b816e670d8f",
               "type": "array",
               "children": [
                 {
+                  "persistentUuid": "d0dbcdc0-5400-48a0-891e-c3be1d9eaf65",
                   "type": "number",
                   "value": 0
                 }
@@ -113,6 +133,7 @@
             },
             {
               "name": "currentIndexLoop",
+              "persistentUuid": "4d1645fe-d22b-462b-85e9-e75fe43044a2",
               "type": "number",
               "value": 0
             }
@@ -120,37 +141,44 @@
         },
         {
           "name": "_currentBranch",
+          "persistentUuid": "55ada888-0384-4ac0-b6ee-4d4cc3bd32a3",
           "type": "string",
           "value": "Start"
         },
         {
           "folded": true,
           "name": "_currentLoop",
+          "persistentUuid": "b686cf06-4bf2-4555-8d88-9f44498a9aab",
           "type": "array",
           "children": []
         },
         {
           "folded": true,
           "name": "_dialogStruct",
+          "persistentUuid": "c1f79df9-d8f3-41dc-a443-b50156c56adb",
           "type": "structure",
           "children": []
         },
         {
           "name": "_lastDialog",
+          "persistentUuid": "3c0597f3-4b52-423c-bee0-fb43a7b8d11c",
           "type": "string",
           "value": "0"
         },
         {
           "name": "_lastLineType",
+          "persistentUuid": "ba2c803d-ae23-4368-940a-84391278ad4e",
           "type": "string",
           "value": "0"
         },
         {
           "folded": true,
           "name": "_lastLoop",
+          "persistentUuid": "c6d9fb47-3810-468a-a6b2-aae960d38ecb",
           "type": "array",
           "children": [
             {
+              "persistentUuid": "1c817c12-9eb4-4238-9e03-dabf2a6c8e6c",
               "type": "structure",
               "children": []
             }
@@ -158,28 +186,70 @@
         },
         {
           "name": "_lastName",
+          "persistentUuid": "e4e2d209-8ae3-4973-beed-cc919eec66b7",
           "type": "string",
           "value": "0"
+        },
+        {
+          "name": "_textwriteEffect",
+          "persistentUuid": "2a48010c-bac4-45ee-ae06-849aa45c4cff",
+          "type": "structure",
+          "children": [
+            {
+              "name": "current_letter",
+              "persistentUuid": "eebc5072-8ab2-4111-b31b-d13e5f012f42",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "effect",
+              "persistentUuid": "ca70b182-819e-416d-8a6c-a36120cbc5af",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "index",
+              "persistentUuid": "3d30a09a-cae5-4948-9145-b985a1f02d29",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "lenght",
+              "persistentUuid": "5d57d9f4-3da6-4bed-baad-d62c4f2973fd",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "line",
+              "persistentUuid": "4c7dd3cc-a438-426b-87c4-4e920d579e2f",
+              "type": "string",
+              "value": ""
+            }
+          ]
         }
       ]
     },
     {
       "name": "_nextDialog",
+      "persistentUuid": "87f75131-92d1-4257-9332-d58d1c76b5b8",
       "type": "boolean",
       "value": false
     },
     {
       "name": "_returnDialog",
+      "persistentUuid": "40587b79-7b8c-47ce-ba61-f175be0f92a0",
       "type": "boolean",
       "value": false
     },
     {
       "name": "_isChangeBranch",
+      "persistentUuid": "4a8a7a35-1fc5-4389-8bbe-a0ed332a58b1",
       "type": "boolean",
       "value": false
     },
     {
       "name": "_skipCommands",
+      "persistentUuid": "582dca05-8a6c-4f12-8c79-051ede924c2f",
       "type": "boolean",
       "value": false
     }
@@ -392,7 +462,6 @@
               "comment": "Avance o retroceso de dialogo"
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -407,14 +476,6 @@
                 }
               ],
               "actions": [
-                {
-                  "type": {
-                    "value": "SetReturnString"
-                  },
-                  "parameters": [
-                    "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]"
-                  ]
-                },
                 {
                   "type": {
                     "value": "SetStringVariable"
@@ -437,6 +498,105 @@
                 }
               ],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._textwriteEffect.effect",
+                        "=",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnString"
+                      },
+                      "parameters": [
+                        "_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"]"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._textwriteEffect.effect",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "_dialogSettings._textwriteEffect.lenght",
+                            "=",
+                            "StrLength(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"])"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetStringVariable"
+                          },
+                          "parameters": [
+                            "_dialogSettings._textwriteEffect.current_letter",
+                            "=",
+                            "StrAt(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"], _dialogSettings._textwriteEffect.index)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetStringVariable"
+                          },
+                          "parameters": [
+                            "_dialogSettings._textwriteEffect.line",
+                            "=",
+                            "SubStr(_dialogSettings._currentLoop[_dialogSettings._LoopArray.IndexLoop[_dialogSettings._LoopArray.currentIndexLoop]][\"line\"], 0, _dialogSettings._textwriteEffect.index)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetReturnString"
+                          },
+                          "parameters": [
+                            "_dialogSettings._textwriteEffect.line"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
                 {
                   "disabled": true,
                   "type": "BuiltinCommonInstructions::Standard",
@@ -1253,6 +1413,36 @@
                 "=",
                 "VariableChildCount(_dialogSettings._currentLoop) - 1"
               ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "_dialogSettings._textwriteEffect.index",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "_dialogSettings._textwriteEffect.line",
+                "=",
+                "\"\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "_dialogSettings._textwriteEffect.current_letter",
+                "=",
+                "\"\""
+              ]
             }
           ],
           "variables": [
@@ -1752,6 +1942,36 @@
                         "+",
                         "1"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._textwriteEffect.index",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._textwriteEffect.current_letter",
+                        "=",
+                        "\"\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._textwriteEffect.line",
+                        "=",
+                        "\"\""
+                      ]
                     }
                   ]
                 },
@@ -1799,6 +2019,36 @@
                         "-",
                         "1"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._textwriteEffect.index",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._textwriteEffect.line",
+                        "=",
+                        "\"\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "_dialogSettings._textwriteEffect.current_letter",
+                        "=",
+                        "\"\""
+                      ]
                     }
                   ]
                 },
@@ -1815,6 +2065,7 @@
                   "comment": "Saltar los comandos, solo si _skipCommands es falso."
                 },
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -2299,7 +2550,6 @@
                   "comment": "No contar las lineas pass"
                 },
                 {
-                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3882,7 +4132,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "Guardar estado de dialogo, incluyendo comandos, absolutamente todo de la variable _dialogSettings"
+          "comment": "Guardar estado de dialogo, practicamente todo de la variable _dialogSettings"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -4161,6 +4411,339 @@
         }
       ],
       "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Action",
+      "group": "History (In dev)",
+      "name": "GetHistory",
+      "private": true,
+      "sentence": "",
+      "events": [],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Action",
+      "group": "History (In dev)",
+      "name": "SetHistoryEnabled",
+      "private": true,
+      "sentence": "",
+      "events": [],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Action",
+      "group": "History (In dev)",
+      "name": "AddToHistory",
+      "private": true,
+      "sentence": "",
+      "events": [],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Condition",
+      "group": "History (In dev)",
+      "name": "GetHistoryWho",
+      "private": true,
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Condition",
+      "group": "History (In dev)",
+      "name": "GetHistoryText",
+      "private": true,
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Obtener la cantidad de dialogos en el historial.",
+      "fullName": "Longitud del historial",
+      "functionType": "Expression",
+      "group": "History (In dev)",
+      "name": "GetHistoryCount",
+      "private": true,
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnNumber"
+              },
+              "parameters": [
+                "VariableChildCount(_dialogSettings.History)"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Type letter by letter",
+      "functionType": "Action",
+      "name": "TextWriterEffectIndex",
+      "sentence": "Show next letter",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "_dialogSettings._textwriteEffect.effect",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "_dialogSettings._textwriteEffect.index",
+                    "<=",
+                    "_dialogSettings._textwriteEffect.lenght"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "_dialogSettings._textwriteEffect.index",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Check whether all the letters for the letter-by-letter effect have been displayed.",
+      "fullName": "Letter by letter effect completed",
+      "functionType": "Condition",
+      "name": "TextwriterEffectCompleted",
+      "sentence": "Letter by letter effect completed",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "_dialogSettings._textwriteEffect.effect",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "_dialogSettings._textwriteEffect.index",
+                    ">=",
+                    "_dialogSettings._textwriteEffect.lenght"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Complete the effect letter by letter.",
+      "fullName": "Complete letter by letter effect",
+      "functionType": "Action",
+      "name": "TextwriterEffectFinish",
+      "sentence": "Complete letter by letter effect",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "_dialogSettings._textwriteEffect.effect",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "_dialogSettings._textwriteEffect.index",
+                "=",
+                "_dialogSettings._textwriteEffect.lenght"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Enable or disable the letter-by-letter text effect, which you can use in a visual novel or other type of game that displays dialogue.",
+      "fullName": "Activate letter-by-letter effect",
+      "functionType": "Action",
+      "name": "SetEffectLetterByLetter",
+      "sentence": "Activate letter-by-letter effect _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Activate",
+                "=",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "_dialogSettings._textwriteEffect.effect",
+                "False",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Activate",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "_dialogSettings._textwriteEffect.effect",
+                "True",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Activate?",
+          "name": "Activate",
+          "type": "yesorno"
+        }
+      ],
+      "objectGroups": []
     }
   ],
   "eventsFunctionsFolderStructure": {
@@ -4183,6 +4766,18 @@
       },
       {
         "functionName": "onScenePostEvents"
+      },
+      {
+        "functionName": "TextWriterEffectIndex"
+      },
+      {
+        "functionName": "SetEffectLetterByLetter"
+      },
+      {
+        "functionName": "TextwriterEffectCompleted"
+      },
+      {
+        "functionName": "TextwriterEffectFinish"
       },
       {
         "functionName": "ConfirmSelection"
@@ -4231,6 +4826,29 @@
       },
       {
         "functionName": "PauseSkipCommands"
+      },
+      {
+        "folderName": "History (In dev)",
+        "children": [
+          {
+            "functionName": "GetHistory"
+          },
+          {
+            "functionName": "SetHistoryEnabled"
+          },
+          {
+            "functionName": "AddToHistory"
+          },
+          {
+            "functionName": "GetHistoryWho"
+          },
+          {
+            "functionName": "GetHistoryText"
+          },
+          {
+            "functionName": "GetHistoryCount"
+          }
+        ]
       }
     ]
   },
