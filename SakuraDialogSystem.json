@@ -4528,8 +4528,10 @@
       "objectGroups": []
     },
     {
+      "description": "Display each letter one by one until the full text is shown.",
       "fullName": "Type letter by letter",
       "functionType": "Action",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/tree/master/docs#type-letter-by-letter",
       "name": "TextWriterEffectIndex",
       "sentence": "Show next letter",
       "events": [
@@ -4586,6 +4588,7 @@
       "description": "Check whether all the letters for the letter-by-letter effect have been displayed.",
       "fullName": "Letter by letter effect completed",
       "functionType": "Condition",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/tree/master/docs#letter-by-letter-effect-completed",
       "name": "TextwriterEffectCompleted",
       "sentence": "Letter by letter effect completed",
       "events": [
@@ -4638,8 +4641,9 @@
     },
     {
       "description": "Complete the effect letter by letter.",
-      "fullName": "Complete letter by letter effect",
+      "fullName": "Finish the letter by letter effect",
       "functionType": "Action",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/tree/master/docs#finish-the-letter-by-letter-effect",
       "name": "TextwriterEffectFinish",
       "sentence": "Complete letter by letter effect",
       "events": [
@@ -4678,6 +4682,7 @@
       "description": "Enable or disable the letter-by-letter text effect, which you can use in a visual novel or other type of game that displays dialogue.",
       "fullName": "Activate letter-by-letter effect",
       "functionType": "Action",
+      "helpUrl": "https://github.com/QuetzalcoutlDev/SakuraDialogSystemGD/tree/master/docs#activate-letter-by-letter-effect",
       "name": "SetEffectLetterByLetter",
       "sentence": "Activate letter-by-letter effect _PARAM1_",
       "events": [
