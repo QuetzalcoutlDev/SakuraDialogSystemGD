@@ -46,14 +46,14 @@ You can then trigger an action if one of these lines is present.
 
 ![called](/img/for_docs/condition_2.png)
 
-### Letter by letter effect completed
+### Letter by letter effect is completed
 
 ![letter_completed](/img/for_docs/condition_3.png)
 
 Check if the letter-by-letter effect has finished.
 
 > [!NOTE]
-> This condition will only work if you have previously activated the effect using the "Activate letter-by-letter effect" action.
+> This condition will only work if you have previously activated the effect using the "Enable letter-by-letter effect" action.
 
 ## Actions
 
@@ -117,7 +117,7 @@ Load the dialog state from a variable.
 > [!NOTE]
 > This action currently does not take into account changes to the dialog file (e.g., you changed or deleted a line of dialogue).
 
-### Activate letter-by-letter effect
+### Enable letter-by-letter effect
 
 ![letter_completed](/img/for_docs/action_7.png)
 
@@ -126,14 +126,14 @@ Enable the letter-by-letter effect, which you can use with the condition "Letter
 > [!NOTE]
 > You don't need a "TextClipped" expression; just use the "CurrentLine" expression and you're all set—though be sure not to place the event that retrieves the text from "CurrentLine" after the "Type letter by letter" action.
 
-### Type letter by letter
+### Advance the effect letter by letter
 
 ![letter_completed](/img/for_docs/action_8.png)
 
 Display each letter one by one until the full text is shown.
 
 > [!NOTE]
-> This action will only work if you have previously activated the effect using the "Activate letter-by-letter effect" action.
+> This action will only work if you have previously activated the effect using the "Enable letter-by-letter effect" action.
 
 ### Finish the letter by letter effect
 
@@ -142,7 +142,7 @@ Display each letter one by one until the full text is shown.
 End the letter-by-letter effect.
 
 > [!NOTE]
-> This action will only work if you have previously activated the effect using the "Activate letter-by-letter effect" action.
+> This action will only work if you have previously activated the effect using the "Enable letter-by-letter effect" action.
 
 ## Expressions
 
